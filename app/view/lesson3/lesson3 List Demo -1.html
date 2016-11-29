@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="lesson3list">
+<head>
+<title>
+Lesson 3 - Practice
+</title>
+<meta charset="utf-8" />
+
+</head>
+
+<body ng-controller="miControler as myScope">
+<div>
+    <div>
+        <table>
+            <tr>
+                <td>Producto</td>
+                <td>Tamano</td>
+                <td>Cantidad</td>
+                <td>Tienda</td>
+                <td/>
+            </tr>
+            <tr>
+                <td><input id="txtProd" ng-model="myScope.producto.nombre"></></td>
+                <td><input id="txtTam" ng-model="myScope.producto.tamano"></></td>
+                <td><input id="txtCant" ng-model="myScope.producto.cantidad"></></td>
+                <td><input id="txtTien" ng-model="myScope.producto.tienda"></></td>
+                <td><button id="btnSave"  ng-click="myScope.agrega(myScope.producto)"/>Guardar</td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <table>
+            <tr>
+                <td>Producto</td>
+                <td>Tamano</td>
+                <td>Cantidad</td>
+                <td>Tienda</td>
+                <td/>
+            </tr>
+            <tr ng-repeat="a in myScope.contenedor">
+                <td>{{a.nombre}}</td>
+                <td>{{a.tamano}}</td>
+                <td>{{a.cantidad}}</td>
+                <td>{{a.tienda}}</td>
+                <td><button id="btnDelete" ng-click="myScope.elimina($index)"/>Eliminar</td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+</body>
+<script src="/lib/angular.min.js"></script>
+<script src="/js/lesson3demo1.js"></script>
+</html>
