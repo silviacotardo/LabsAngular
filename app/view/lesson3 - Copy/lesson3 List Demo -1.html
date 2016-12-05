@@ -5,9 +5,7 @@
 Lesson 3 - Practice
 </title>
 <meta charset="utf-8" />
-
 </head>
-
 <body ng-controller="miControler as myScope">
 <div>
     <div>
@@ -28,7 +26,10 @@ Lesson 3 - Practice
             </tr>
         </table>
     </div>
-    <div><label><input ng-model="myTxtFilter"/></label></div>
+    <div>
+        <label >Filtro</label>
+        <input ng-model="myText"></input>
+    </div>   
     <div>
         <table>
             <tr>
@@ -38,7 +39,7 @@ Lesson 3 - Practice
                 <td>Tienda</td>
                 <td/>
             </tr>
-            <tr ng-repeat="a in myScope.contenedor |filter:myTxtFilter">
+            <tr ng-repeat="a in myScope.lista()|filter:myText">
                 <td>{{a.nombre}}</td>
                 <td>{{a.tamano}}</td>
                 <td>{{a.cantidad}}</td>
@@ -47,9 +48,11 @@ Lesson 3 - Practice
             </tr>
         </table>
     </div>
-
 </div>
 </body>
-<script src="/lib/angular.min.js"></script>
-<script src="/js/lesson3demo1.js"></script>
+<script src="js/angular/angular.js"></script>
+<script src="js/app/config/appService.js"></script>
+<script src="js/app/services/service.js"></script>
+<script
+src="js/app/controller/lesson3.controller.js"></script>
 </html>
