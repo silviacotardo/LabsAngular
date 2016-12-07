@@ -1,4 +1,4 @@
-app.controller('miControler', ["myService", "myList", function(myService, myList) {
+/*app.controller('miControler', ["myService", "myList", function(myService, myList) {
 
     var myScope = this;
 
@@ -18,5 +18,19 @@ app.controller('miControler', ["myService", "myList", function(myService, myList
         return myService.lista();
     }
 
+
+}]);
+*/
+
+app.controller('miControler', ["consultaVenta", "myList", function(consultaVenta, myList){
+    var myScope = this;
+
+    myScope.producto = {};
+
+    myScope.contenedor = [];
+
+    myScope.lista = function(){
+        return consultaVenta.lista();
+    };
 
 }]);

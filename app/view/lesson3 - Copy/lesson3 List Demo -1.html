@@ -30,8 +30,36 @@ Lesson 3 - Practice
         <label >Filtro</label>
         <input ng-model="myText"></input>
     </div>   
-    <div>
-        <table>
+    <div style="display:table;">
+        <div style="display:table-row;">
+            <div style="display:table-cell;">
+                Producto 
+            </div>
+            <div style="display:table-cell;">
+                Tamano 
+            </div>
+            <div style="display:table-cell;">
+                Cantidad 
+            </div>
+            <div style="display:table-cell;">
+                Tienda 
+            </div>
+        </div>
+        <div style="display:table-row;" ng-repeat="a in myScope.lista()|filter:myText">
+            <div style="display:table-cell;">
+                {{a.nombre}} 
+            </div>
+            <div style="display:table-cell;">
+                {{a.tamano}} 
+            </div>
+            <div style="display:table-cell;">
+                {{a.cantidad}} 
+            </div>
+            <div style="display:table-cell;">
+                {{a.tienda}} 
+            </div>
+        </div>
+        <!--<table>
             <tr>
                 <td>Producto</td>
                 <td>Tamano</td>
@@ -46,7 +74,8 @@ Lesson 3 - Practice
                 <td>{{a.tienda}}</td>
                 <td><button id="btnDelete" ng-click="myScope.elimina($index)"/>Eliminar</td>
             </tr>
-        </table>
+        </table>-->
+
     </div>
 </div>
 </body>
